@@ -14,9 +14,8 @@ class TaskListApp < Sinatra::Base
   post '/add' do
     @task = TaskList::Task.new
     @task.add_task(params["title"], params["description"], params["completed_at"])
-
     erb :index
   end
 
-run!
+  run!
 end
