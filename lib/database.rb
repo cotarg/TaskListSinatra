@@ -28,6 +28,45 @@ module TaskList
       db.execute("DROP TABLE IF EXISTS tasks;")
       create_schema
     end
+  end
+
+  class Task < Database
+
+    # attr_reader :task_to_enter
+
+    # def initialize(input)
+    #   # we want this to store a hash that uses column names as hash keys
+    #   @task_to_enter = input
+    # end
+
+    def add_task(task_details)
+      insert_statement = <<-INSERTSTATEMENT
+
+        INSERT INTO tasks (
+          title, description, completed_at
+        ) VALUES (
+          :title, :description, :completed_at
+        );
+
+      INSERTSTATEMENT
+    end
+
+
+    def all_tasks
+      query = <<-QUERY
+        SELECT * FROM tasks;
+      QUERY
+    end
+
+    # WRITE THIS METHOD LATER. YOU WILL WANT IT!
+    # def select_task(column, detail_to_select_for)
+    #   query = <<-QUERY
+    #     SELECT * FROM tasks
+    #     WHERE ? = ?
+
+    #   QUERY
+
+    # end
 
   end
 end
