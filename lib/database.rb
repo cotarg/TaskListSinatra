@@ -4,8 +4,8 @@ module TaskList
   class Database
     attr_reader :db
 
-    def initialize(db_name)
-      @db = SQLite3::Database.new(db_name)
+    def initialize(db_name = "tasklist")
+      @db = SQLite3::Database.new("database/#{db_name}.db")
     end
 
     def create_schema
@@ -28,6 +28,8 @@ module TaskList
       db.execute("DROP TABLE IF EXISTS tasks;")
       create_schema
     end
-    
+
   end
 end
+
+our_tasks = TaskList::Database.new
