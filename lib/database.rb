@@ -32,12 +32,13 @@ module TaskList
 
   class Task < Database
 
-    # attr_reader :task_to_enter
+     attr_reader :task_to_enter
 
-    # def initialize(input)
-    #   # we want this to store a hash that uses column names as hash keys
-    #   @task_to_enter = input
-    # end
+    def initialize(input)
+      # we want this to store a hash that uses column names as hash keys
+      # this holds the params hash
+      @task_to_enter = input
+    end
 
     def add_task(task_details)
       insert_statement = <<-INSERTSTATEMENT

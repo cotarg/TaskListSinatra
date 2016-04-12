@@ -13,7 +13,13 @@ class TaskListApp < Sinatra::Base
 
   post '/add' do
     # this is where @my_score went in the previous project
-    erb :add
+    # @new_task = Task.new(params)
+
+
+    # this is the point where it goes into the database. before this was all sinatra.
+    # @new_task.add_task(task_to_enter)
+    # so we can see the newly updated list of tasks
+    erb :index
   end
 
 run!
