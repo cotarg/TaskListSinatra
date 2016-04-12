@@ -30,28 +30,27 @@ module TaskList
     end
   end
 
-  class Task < Database
+  class Task < TaskList::Database
 
-     attr_reader :task_to_enter
+    attr_reader :db
 
-    def initialize(input)
-      # we want this to store a hash that uses column names as hash keys
-      # this holds the params hash
-      @task_to_enter = input
+    def initialize(db_name = "tasklist")
+      @db = SQLite3::Database.new("database/#{db_name}.db")
     end
 
-    def add_task(task_details)
+    def add_task(title, description, completed_at)
       insert_statement = <<-INSERTSTATEMENT
 
         INSERT INTO tasks (
           title, description, completed_at
         ) VALUES (
-          :title, :description, :completed_at
+          ?, ?, ?
         );
 
       INSERTSTATEMENT
-    end
 
+      db.execute(insert_statement, title, description, completed_at)
+    end
 
     def all_tasks
       query = <<-QUERY
