@@ -14,7 +14,29 @@ body {
 /********** BODY/CONTENT *********/
 
 .odd-task {
-	background-color: red;
+	background-color: white;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.even-task {
+	padding: 1rem;
+	margin: 1rem;
+	background-color: #cc99ff;
+}
+
+.task-title {
+	font-weight: bolder;
+	font-variant: small-caps;
+	font-size: 20px;
+}
+
+.task-desc {
+	font-size: 14px;
+}
+
+.completion {
+	font-size: 14px;
 }
 
 /********** FOOTER **********/
