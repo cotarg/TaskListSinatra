@@ -1,0 +1,26 @@
+
+<!-- params is a hash. Its keys are each of the "name" fields below. -->
+
+<section class="task-edit">
+	<!-- WRITE A FORM HERE! -->
+	<form action="" method="post" accept-charset="utf-8">
+		<fieldset>
+			<legend>Edit Your Task</legend>
+
+			<label for="title">Task</label><br>
+			<input type="text" maxlength="140" name="title" id="title"><br>
+
+			<label for="description">Extended Description</label><br>
+			<textarea rows="4" cols="50" maxlength="1000" name="description" id="description"></textarea><br>
+
+			<!-- People might not use this field much, but Rowan was antsy about not having three things contained in params incase it gives her future trouble using SQL methods. -->
+			<label for="completed_at">Completed On</label><br>
+			<input type="text" maxlength="50" name="completed_at" id="completed_at">
+
+			<input type="submit" value="Submit">
+
+		</fieldset>
+	</form>
+
+	<a href='/'>Return to the List of Tasks.</a>
+</section>

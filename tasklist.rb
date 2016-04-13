@@ -19,5 +19,10 @@ class TaskListApp < Sinatra::Base
     erb :index
   end
 
+  get '/edit' do
+    
+    erb :edit
+  end
+
   run!
 end

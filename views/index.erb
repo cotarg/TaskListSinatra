@@ -9,28 +9,45 @@
 	<% tasks_for_display = @displayed_task %>
 	<ul class="displayed_list">
 		<% iteration_count = 0 %>
-			
+
 		<% tasks_for_display.each do |task| %>
 			<% iteration_count += 1%>
-			
+
 			<% if iteration_count % 2 == 0 %>
-			
-				<li class="even-task"><span class="task-title"><%= task[0] %>. <%= task[1].capitalize %></span><br>
-				<span class="task-desc"><%= task[2] %></span><br>
-		 		<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span></li>
-			
+
+				<li class="even-task">
+					<span class="task-title"><%= task[0] %>. <%= task[1].capitalize %></span><br>
+					<span class="task-desc"><%= task[2] %></span><br>
+		 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span>
+					<span class="modify">
+					<form action="" method="post" accept-charset="utf-8">
+						<!-- radio buttons go here -->
+						<input type="radio" name="<%= task[0] %>" value="edit"> Edit
+						<input type="radio" name="<%= task[0] %>" value="delete"> Delete
+						<input type="submit" value="Submit">
+					</form>
+					</span>
+				</li>
 			<% else %>
-			
-				<li class="odd-task"><span class="task-title"><%= task[0] %>. <%= task[1].capitalize %></span><br>
+
+			<li class="odd-task">
+				<span class="task-title"><%= task[0] %>. <%= task[1].capitalize %></span><br>
 				<span class="task-desc"><%= task[2] %></span><br>
-			 	<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span></li>
+				<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span>
+				<span class="modify">
+				<form action="" method="post" accept-charset="utf-8">
+					<!-- radio buttons go here -->
+					<input type="radio" name="<%= task[0] %>" value="edit"> Edit
+					<input type="radio" name="<%= task[0] %>" value="delete"> Delete
+					<input type="submit" value="Submit">
+				</form>
+				</span>
+			</li>
 			<% end %>
-      
+
     <% end %>
-			
+
 	</ul>
 			<!-- THIS IS WHERE WE WILL PUT THE TASKS!! -->
 			<!-- WE WANT TO SHADE ALTERNATE LINES WITH CSS SO THAT TASKS ARE EASIER TO SEE. -->
 </section>
-
-

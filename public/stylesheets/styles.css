@@ -52,12 +52,16 @@ ul.displayed_list {
 	background-color: white;
 	padding: 1rem;
 	margin: 1rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .even-task {
 	padding: 1rem;
 	margin: 1rem;
 	background-color: #cc99ff;
+	display: flex;
+	flex-direction: column;
 }
 
 .task-title {
@@ -76,11 +80,15 @@ ul.displayed_list {
 
 .completion {
 	font-size: 85%;
-	display: block;
 }
 
 .bold-text {
 	font-weight: bolder;
+}
+
+.modify {
+	display: flex;
+	justify-content: flex-end;
 }
 
 /********** FOOTER **********/
