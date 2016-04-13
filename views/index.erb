@@ -2,8 +2,14 @@
 			<h1>TASKS</h1>
 			<% tasks_for_display = @displayed_task %>
 			<ul class="displayed_list">
+			<% iteration_count = 0 %>
 			<% tasks_for_display.each do |task| %>
-					<li><%= task %></li>
+				<% iteration_count += 1%>
+				<% if iteration_count % 2 == 0 %>
+					<li class="even-task"><%= task %></li>
+				<% else %>
+					<li class="odd-task"><%= task %></li>
+				<% end %>
       <% end %>
 			</ul>
 			<!-- THIS IS WHERE WE WILL PUT THE TASKS!! -->

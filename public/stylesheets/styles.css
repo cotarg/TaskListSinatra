@@ -13,4 +13,8 @@ body {
 
 /********** BODY/CONTENT *********/
 
+.odd-task {
+	background-color: red;
+}
+
 /********** FOOTER **********/
