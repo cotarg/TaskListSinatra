@@ -39,7 +39,7 @@ module TaskList
       @db = SQLite3::Database.new("database/#{db_name}.db")
     end
 
-    # USES BIND VARIABLES (and was confusing). 
+    # USES BIND VARIABLES (and was confusing).
     def add_task(title, description, completed_at)
       insert_statement = <<-INSERTSTATEMENT
 
@@ -61,11 +61,14 @@ module TaskList
       query = <<-QUERY
         SELECT * FROM tasks;
       QUERY
+
+      db.execute(query)
     end
 
     def make_tasks_pretty
       # RATHER THAN WRITE AN UGLY SINATRA BLOCK, LET'S WRITE A PRETTY RUBY METHOD
       # It should:
+
 
       # iterate the array delivered by all_tasks and format each one as a line item for display.
     end
