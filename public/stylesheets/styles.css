@@ -13,6 +13,14 @@ body {
 
 /********** BODY/CONTENT *********/
 
+ul.displayed_list {
+	list-style-type: none;
+}
+
+.displayed_list li {
+	border-radius: 27px;
+}
+
 .odd-task {
 	background-color: white;
 	padding: 1rem;
@@ -28,15 +36,15 @@ body {
 .task-title {
 	font-weight: bolder;
 	font-variant: small-caps;
-	font-size: 20px;
+	font-size: 125%;
 }
 
 .task-desc {
-	font-size: 14px;
+	font-size: 85%;
 }
 
 .completion {
-	font-size: 14px;
+	font-size: 85%;
 }
 
 /********** FOOTER **********/

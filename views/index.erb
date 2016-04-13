@@ -6,12 +6,12 @@
 			<% tasks_for_display.each do |task| %>
 				<% iteration_count += 1%>
 				<% if iteration_count % 2 == 0 %>
-					<li class="even-task"><%= task[0] %>. <span class="task-title"><%= task[1] %></span><br> 
-						<span class="task-desc"><%= task[2] %></span><br>
+					<li class="even-task"><span class="task-title"><%= task[0] %>. <%= task[1] %></span><br>
+						<span class="task-desc"><%= task[2] %></span><br><br>
 					 	<span class="completion">Completed On: <%= task[3] %></span></li>
 				<% else %>
-					<li class="odd-task"><%= task[0] %>. <span class="task-title"><%= task[1] %></span><br> 
-						<span class="task-desc"><%= task[2] %></span><br>
+					<li class="odd-task"><span class="task-title"><%= task[0] %>. <%= task[1] %></span><br>
+						<span class="task-desc"><%= task[2] %></span><br><br>
 					 	<span class="completion">Completed On: <%= task[3] %></span></li>
 				<% end %>
       <% end %>
