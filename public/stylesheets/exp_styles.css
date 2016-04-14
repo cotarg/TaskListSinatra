@@ -5,7 +5,7 @@
 }
 
 body {
-	font: 18px Helvetica, sans-serif;
+	font: 18px Courier, sans-serif;
 	background-color: #CCC;
 }
 
@@ -24,7 +24,7 @@ body {
 	text-align: center;
 	width: 25%;
 	margin: 0 auto;
-	border: 2px solid #2d862d;
+	border: 5px double #2d862d;
 }
 
 .other-actions a {
@@ -54,6 +54,7 @@ ul.displayed_list {
 	margin: 1rem;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 .even-task {
@@ -62,6 +63,7 @@ ul.displayed_list {
 	background-color: #cc99ff;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 .task-title {
@@ -91,11 +93,47 @@ ul.displayed_list {
 	justify-content: flex-end;
 }
 
+button {
+	border: 2px outset #aaa;
+	padding: .5rem;
+	font-size: 14px;
+	font-family: Courier, sans-serif;
+
+}
+
+.odd-task button {
+	background-color: #cc99ff;
+}
 
 /********** ADD/EDIT FORM **********/
 
+.task-add {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 fieldset {
-	background-color: #cc99ff;
+	display: flex;
+	background-color: #e6ccff;
+	border: 5px double #cc99ff;
+	max-width: 80%;
+	width: auto;
+	
+}
+
+.go-back {
+	display: flex;
+	background-color: #339933;
+	border-radius: 27px;
+	padding: 2rem;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	max-width: 100%;
+	width: auto;
+	border: 5px double #2d862d;
 }
 
 /********** FOOTER **********/
