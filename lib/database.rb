@@ -65,14 +65,6 @@ module TaskList
       db.execute(query)
     end
 
-    def make_tasks_pretty
-      # RATHER THAN WRITE AN UGLY SINATRA BLOCK, LET'S WRITE A PRETTY RUBY METHOD
-      # It should:
-
-
-      # iterate the array delivered by all_tasks and format each one as a line item for display.
-    end
-
     def find_task(task_id)
       query = <<-QUERY
         SELECT * FROM tasks
@@ -82,15 +74,15 @@ module TaskList
       db.execute(query, task_id)
     end
 
-    # WRITE THIS METHOD LATER. YOU WILL WANT IT!
-    # def select_task(column, detail_to_select_for)
-    #   query = <<-QUERY
-    #     SELECT * FROM tasks
-    #     WHERE ? = ?
+    def update_task(title, description, completed_at, task_id)
+      query = <<-QUERY
+        UPDATE tasks
+        SET title=?, description=?, completed_at=?
+        WHERE id=?;
+      QUERY
 
-    #   QUERY
-
-    # end
+      db.execute(query, title, description, completed_at, task_id)
+    end
 
   end
 end
