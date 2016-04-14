@@ -30,6 +30,7 @@ class TaskListApp < Sinatra::Base
   end
 
   get '/edit' do
+    erb :index
   end
 
   post '/edit' do
