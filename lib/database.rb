@@ -73,6 +73,15 @@ module TaskList
       # iterate the array delivered by all_tasks and format each one as a line item for display.
     end
 
+    def edit_task(task_id)
+      query = <<-QUERY
+        SELECT * FROM tasks
+        WHERE id = ?;
+      QUERY
+
+      db.execute(query, task_id)
+    end
+
     # WRITE THIS METHOD LATER. YOU WILL WANT IT!
     # def select_task(column, detail_to_select_for)
     #   query = <<-QUERY
