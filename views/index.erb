@@ -35,7 +35,7 @@
 				<span class="task-desc"><%= task[2] %></span><br>
 				<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span>
 				<span class="modify">
-				<form action="" method="post" accept-charset="utf-8">
+				<form action="/edit" method="post" accept-charset="utf-8">
 					<!-- radio buttons go here -->
 					<input type="radio" name="<%= task[0] %>" value="edit"> Edit
 					<input type="radio" name="<%= task[0] %>" value="delete"> Delete

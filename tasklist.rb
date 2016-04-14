@@ -19,6 +19,11 @@ class TaskListApp < Sinatra::Base
     redirect '/'
   end
 
+  post '/edit' do
+    erb :edit
+  end
+
+
   get '/edit' do
 
     erb :edit
