@@ -15,7 +15,7 @@ class TaskListApp < Sinatra::Base
     # using these as the default values for the edit form
     @task_id = params.keys[0].to_i
     @task = @task_manager.edit_task(@task_id)
-    erb :edit
+    redirect '/edit'
   end
 
   get '/add' do
@@ -26,21 +26,25 @@ class TaskListApp < Sinatra::Base
     @task_manager = TaskList::Task.new
     @task_manager.add_task(params["title"], params["description"], params["completed_at"])
     @displayed_task = TaskList::Task.new.all_tasks
-    erb :index
+    redirect "/"
   end
 
   get '/edit' do
-    erb :index
+    @task_manager = TaskList::Task.new
+    # using these as the default values for the edit form
+    @task_id = params.keys[0].to_i
+    @task = @task_manager.edit_task(@task_id)
+    erb :edit
   end
 
   post '/edit' do
     # this is where the results of the UPDATE go
     @task_manager = TaskList::Task.new
-    @task_manager = @task_manager.update_task(params[:title], params[:description], params[:completed_at], params[:id])
+    @task = @task_manager.update_task(params[:title], params[:description], params[:completed_at], params[:id])
     @displayed_task = TaskList::Task.new.all_tasks
 
 
-    erb :index
+    redirect '/'
   end
 
   run!
