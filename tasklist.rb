@@ -29,11 +29,15 @@ class TaskListApp < Sinatra::Base
     erb :index
   end
 
+  get '/edit' do
+  end
+
   post '/edit' do
     # this is where the results of the UPDATE go
     @task_manager = TaskList::Task.new
-    @task_manager.update_task(params["title"], params["description"], params["completed_at"], params["task_id"])
-    @displayed_task = @task_manager.all_tasks
+    @task_manager = @task_manager.update_task(params[:title], params[:description], params[:completed_at], params[:id])
+    @displayed_task = TaskList::Task.new.all_tasks
+
 
     erb :index
   end
