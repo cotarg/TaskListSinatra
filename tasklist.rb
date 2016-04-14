@@ -8,6 +8,11 @@ class TaskListApp < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+    @displayed_task = TaskList::Task.new.all_tasks
+    erb :index
+  end
+
   get '/add' do
   	erb :add
   end
