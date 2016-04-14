@@ -16,15 +16,13 @@ class TaskListApp < Sinatra::Base
     @task = TaskList::Task.new
     @task.add_task(params["title"], params["description"], params["completed_at"])
     @displayed_task = TaskList::Task.new.all_tasks
-    erb :index
+    redirect '/'
   end
 
   get '/edit' do
-    
+
     erb :edit
   end
 
   run!
 end
-
-
