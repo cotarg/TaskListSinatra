@@ -20,12 +20,12 @@
 					<span class="task-desc"><%= task[2] %></span><br>
 		 			<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span>
 					<span class="modify">
-					<form action="" method="post" accept-charset="utf-8">
-						<!-- radio buttons go here -->
+					<!-- <form action="" method="post" accept-charset="utf-8">
 						<input type="radio" name="<%= task[0] %>" value="edit"> Edit
 						<input type="radio" name="<%= task[0] %>" value="delete"> Delete
 						<input type="submit" value="Submit">
-					</form>
+					</form> -->
+					<a href="/edit?task_id=<%= task.first %>">Edit</a>
 					</span>
 				</li>
 			<% else %>
@@ -35,12 +35,12 @@
 				<span class="task-desc"><%= task[2] %></span><br>
 				<span class="completion"><span class="bold-text">Completed On:</span> <%= task[3] %></span>
 				<span class="modify">
-				<form action="/edit" method="post" accept-charset="utf-8">
-					<!-- radio buttons go here -->
+				<!-- <form action="/" method="post" accept-charset="utf-8">
 					<input type="radio" name="<%= task[0] %>" value="edit"> Edit
 					<input type="radio" name="<%= task[0] %>" value="delete"> Delete
 					<input type="submit" value="Submit">
-				</form>
+				</form> -->
+				<a href="/edit?task_id=<%= task.first %>">Edit</a>
 				</span>
 			</li>
 			<% end %>
