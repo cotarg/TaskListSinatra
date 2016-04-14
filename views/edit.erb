@@ -1,23 +1,23 @@
 
 <!-- params is a hash. Its keys are each of the "name" fields below. -->
 
-<%= @task %>
-
 <section class="task-edit">
 	<!-- WRITE A FORM HERE! -->
 	<form action="" method="post" accept-charset="utf-8">
 		<fieldset>
 			<legend>Edit Your Task</legend>
 
+			<input type="hidden" name="id" value="<%= @task[0][0] %>">
+
 			<label for="title">Task</label><br>
-			<input type="text" maxlength="140" name="title" id="title"><br>
+			<input type="text" maxlength="140" name="title" id="title" value="<%= @task[0][1] %>"><br>
 
 			<label for="description">Extended Description</label><br>
-			<textarea rows="4" cols="50" maxlength="1000" name="description" id="description"></textarea><br>
+			<textarea rows="4" cols="50" maxlength="1000" name="description" id="description"><%= @task[0][2] %></textarea><br>
 
 			<!-- People might not use this field much, but Rowan was antsy about not having three things contained in params incase it gives her future trouble using SQL methods. -->
 			<label for="completed_at">Completed On</label><br>
-			<input type="text" maxlength="50" name="completed_at" id="completed_at">
+			<input type="text" maxlength="50" name="completed_at" id="completed_at" value="<%= @task[0][3]%>">
 
 			<input type="submit" value="Submit">
 
